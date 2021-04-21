@@ -1,0 +1,243 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    color: #414042;
+    font-family: '微軟正黑體', sans-serif;
+    font-size: 15px;
+}
+ul, dt, dd, dl{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    display: block;
+    color: inherit;
+    transition: 0.5s;
+}
+a:hover{
+    color: inherit;
+}
+/* ----------------------- */
+.container-fluid.w-1480{
+    max-width: 1480px;
+}
+.container-fluid.w-1280{
+    max-width: 1280px;
+}
+.container-fluid.w-960{
+    max-width: 960px;
+}
+/* ------- */
+.img-box > a{
+    width: 100%;
+    height: 100%;
+}
+.img-box > img, .img-box > a > img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+/* ▼ 圖片設定(依比例) ▼ */
+.img-2-1, .img-2-3, .img-3-1, .img-3-2, .img-5-2, .img-1-1{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.img-2-1{
+    padding-bottom: 50%;
+}
+.img-2-3{
+    padding-bottom: 133.333%;
+}
+.img-3-1{
+    padding-bottom: 33.3333%;
+}
+.img-3-2{
+    padding-bottom: 66.6666%;
+}
+.img-5-2{
+    padding-bottom: 40%;
+}
+.img-1-1{
+    padding-bottom: 100%;
+}
+.img-2-1 img, .img-2-3 img, .img-3-1 img, .img-3-2 img, .img-5-2 img, .img-1-1 img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* 插件模組修改
+============================================================== */
+/* ▼ Swiper ▼ */
+.swiper-button-prev{
+    /* left: -15px; */
+    outline: none;
+    background-image: url(../img/swiper_button_prev_B.svg);
+}
+.swiper-button-next{
+    /* right: -15px; */
+    outline: none;
+    background-image: url(../img/swiper_button_next_B.svg);
+}
+.swiper-pagination{
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+}
+.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 4px;
+}
+.swiper-pagination-bullet-active{
+    background: #1b2684;
+}
+/* NAVBAR
+========================================================= */
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    background: rgba(255,255,255,0.9);
+}
+h1.logo{
+    margin: 0;
+    padding: 23px 0;
+    width: 350px;
+    line-height: 0;
+}
+nav a:hover{
+    text-decoration: none;
+    color: #1b2684;
+}
+nav.top li{
+    font-weight: 500;
+    font-size: 17px;
+}
+nav.top li img{
+    height: 22px;
+}
+/* ▼ 漢堡按鈕 ▼ */
+.btnMenu{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.3s;
+    transform: translateY(-50%);
+}
+.btnMenu .menuLine{
+    position: relative;
+    width: 25px;
+    height: 16px;
+}
+.btnMenu > .menuLine > span{
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #1b2684;
+    transition: 0.3s;
+}
+.btnMenu > .menuLine > span:nth-of-type(2){
+    top: 8px;
+}
+.btnMenu > .menuLine > span:nth-of-type(3){
+    top: 16px;
+}
+/* ▼ 漢堡按鈕變XX ▼ */
+.btnMenu > .menuLine.active > span:nth-of-type(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.btnMenu > .menuLine.active > span:nth-of-type(2){
+    opacity: 0;
+}
+.btnMenu > .menuLine.active > span:nth-of-type(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 頁尾聊天泡泡 ▼ ▼ ▼
+=================================================================== */
+.social-aside{
+    position: fixed;
+    right: 5%;
+    bottom: 50px;
+    z-index: 11;  
+}
+.social{
+    position: relative;
+}
+.social .social-circle{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px rgba(160, 160, 160, 0.3);
+    transition: .5s;
+    margin-top: 10px;
+}
+.social-circle.line{
+    background-color: #4ecd00;
+}
+.social-circle.fb{
+    background-color: #1877f2;
+}
+.social .social-circle a{
+    display: block;
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.social .social-circle a img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.social .social-circle:hover{
+    transform: scale(1.05);
+}
+/* Footer ▼ ▼ ▼
+=================================================================== */
+footer.bottom{
+    width: 100%;
+    background: #e5e5e5;
+    padding: 20px 0;
+}
+footer.bottom ul a{
+    width: auto;
+    display: inline-block;
+}
+footer.bottom ul a img{
+    height: 20px;
+}
+footer.bottom .img-box{
+    width: 80px;
+    margin: 20px auto;
+}
+footer.bottom .btn-fb{
+    height: 20px;
+}
+.copyright{
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 0;
+}

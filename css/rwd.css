@@ -1,0 +1,231 @@
+@media screen and (min-width:992px) {
+    .venue .img-3-2 a:hover img {
+        transform: scale(1.1);
+    }
+
+    .venue .img-3-2 a:hover .pic-cover {
+        opacity: 1;
+    }
+
+    /* 情境應用
+    ====================================== */
+    .situation-wrap.active .situation-content li{
+        background: transparent;
+    }
+    .situation-content li:nth-of-type(2n-1){
+        background: rgba(255, 255, 255, 0.9);
+    }
+    .situation-content li:nth-of-type(2n){
+        background: rgba(245, 245, 245, 0.9);
+    }
+    .situation-content li .text-wrap::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 30%;
+    }
+    .situation-content li:nth-of-type(2n-1) .text-wrap::after{
+        background: linear-gradient(to bottom, rgba(235, 235, 235, 0) 0%, rgba(235, 235, 235, 0.9) 46%, rgb(235, 235, 235) 60%, rgb(235, 235, 235) 100%);
+    }
+    .situation-content li:nth-of-type(2n) .text-wrap::after{
+        background: linear-gradient(to bottom, rgba(226, 226, 226, 0) 0%, rgba(226, 226, 226, 0.9) 46%, rgb(226, 226, 226) 60%, rgb(226, 226, 226) 100%);
+    }
+
+    .situation-content.active li .text-wrap::after {
+        display: none;
+    }
+
+    /* border hover效果 */
+    .hover_box {
+        padding: 15px 30px 40px 30px;
+        position: relative;
+        min-height: 450px;
+        height: 450px;
+        overflow: hidden;
+        transition: .5s;
+    }
+
+    .hover_box::before,
+    .hover_box::after {
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 0;
+        transition: .5s;
+    }
+
+    .hover_box::before {
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+    }
+
+    .hover_box::after {
+        border-top-width: 1px;
+        border-right-width: 1px;
+    }
+
+    .hover_box:hover::before,
+    .hover_box:hover::after {
+        border-color: #ffffff;
+        transition: border-color 0s, width 0.25s, height 0.25s;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hover_box:hover::before {
+        transition-delay: 0s, 0s, 0.25s;
+    }
+
+    .hover_box:hover::after {
+        transition-delay: 0s, 0.25s, 0s;
+    }
+
+    .hover_tips {
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+        width: 60px;
+        animation: swing 2s infinite;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .hover_tips {
+        display: none;
+    }
+
+    /* ====== ▼ nav ▼ ====== */
+    header {
+        background: #ffffff;
+    }
+
+    h1.logo {
+        margin: 0;
+        padding: 28px 0;
+        width: 250px;
+        line-height: 0;
+    }
+
+    nav.top .nav-menu {
+        position: absolute;
+        top: -400px;
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        background: rgb(255, 255, 255);
+        transition: 0.5s;
+    }
+
+    nav.top .nav-menu::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to bottom, rgba(173, 173, 173, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    nav.top .nav-menu.open {
+        top: 72.66px;
+        padding-bottom: 25px;
+    }
+
+    nav.top .nav-menu li {
+        padding: 10px 0;
+        width: 70%;
+        text-align: center;
+    }
+
+    nav.top .nav-menu li:nth-of-type(1) {
+        margin-top: 20px;
+    }
+
+    nav.top .nav-menu li.btn-next-red {
+        margin: 20px 0 30px 0;
+    }
+
+    /* -------------------- */
+    #navBg {
+        position: fixed;
+        top: 0;
+        z-index: 7;
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+    }
+
+    #navBg.open {
+        display: block;
+    }
+    /* ---------------------- */
+    .venue, .situation, .situation-wrap, .technology{
+        padding-bottom: 10px;
+    }
+
+    /* 場館介紹
+    ========================= */
+    .pic-cover {
+        top: auto;
+        bottom: 0;
+        justify-content: space-between;
+        height: 20%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    .pic-cover::after {
+        content: '\00BB';
+        color: #ffae18;
+        font-size: 24px;
+        animation: wobble 2.5s infinite;
+    }
+
+    /* 情境應用
+    ========================= */
+    .situation-wrap{
+        background-image: none;
+    }
+    .situation-wrap .img-box {
+        height: auto;
+    }
+
+    .situation-content li::after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid #505050;
+        margin: 50px auto;
+        width: 100px;
+    }
+    /* 尖端技術
+    ======================== */
+    .technology .row:nth-of-type(n) .text-wrap{
+        order: 13;
+    }
+    .technology .row{
+        padding: 40px 0;
+    }
+
+}
+
+@media screen and (max-width:767px) {}
+
+@media screen and (max-width:575px) {
+    .land-bg-content h2{
+        font-size: 10vmin;
+    }
+    .land-bg-content h3{
+        font-size: 15px;
+    }
+    .social-aside {
+        bottom: 20px;
+    }
+    
+}
